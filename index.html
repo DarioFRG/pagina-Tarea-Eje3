@@ -1,0 +1,849 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#0b1220" />
+  <meta name="description" content="Teoría del Estado y Gobierno — Respuestas sobre la Constitución Política de Colombia de 1991." />
+  <title>Teoría del Estado y Gobierno — Constitución de 1991</title>
+
+  <style>
+    :root{
+      --bg0:#070A12;
+      --bg1:#0b1220;
+      --card: rgba(255,255,255,.08);
+      --card2: rgba(255,255,255,.06);
+      --stroke: rgba(255,255,255,.14);
+      --text:#EAF0FF;
+      --muted: rgba(234,240,255,.72);
+      --muted2: rgba(234,240,255,.58);
+      --brand:#7C5CFF;
+      --brand2:#1EE6A6;
+      --warn:#FFCA5C;
+      --shadow: 0 18px 60px rgba(0,0,0,.55);
+      --shadow2: 0 10px 30px rgba(0,0,0,.45);
+      --r: 18px;
+      --r2: 14px;
+      --max: 1100px;
+    }
+
+    *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color: var(--text);
+      background:
+        radial-gradient(1200px 800px at 18% 10%, rgba(124,92,255,.30), transparent 58%),
+        radial-gradient(1100px 700px at 85% 0%, rgba(30,230,166,.22), transparent 55%),
+        radial-gradient(900px 700px at 70% 92%, rgba(255,202,92,.16), transparent 52%),
+        linear-gradient(180deg, var(--bg0), var(--bg1) 60%, #070A12 120%);
+      overflow-x:hidden;
+    }
+
+    a{ color: inherit; text-decoration:none; }
+    .wrap{ width:min(var(--max), calc(100% - 40px)); margin:0 auto; }
+
+    /* Top bar */
+    .topbar{
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(10px);
+      background: rgba(7,10,18,.58);
+      border-bottom: 1px solid rgba(255,255,255,.10);
+    }
+    .topbar-inner{
+      display:flex; align-items:center; justify-content:space-between;
+      padding: 12px 0;
+      gap: 14px;
+    }
+    .brand{
+      display:flex; align-items:center; gap: 10px;
+      min-width: 240px;
+    }
+    .logo{
+      width: 38px; height: 38px; border-radius: 12px;
+      background:
+        radial-gradient(16px 16px at 30% 30%, rgba(255,255,255,.35), transparent 60%),
+        conic-gradient(from 210deg, var(--brand), var(--brand2), var(--warn), var(--brand));
+      box-shadow: 0 10px 25px rgba(124,92,255,.25);
+      border: 1px solid rgba(255,255,255,.15);
+      flex: 0 0 auto;
+    }
+    .brand h1{
+      font-size: 14px; margin:0; letter-spacing:.3px;
+      line-height: 1.15;
+    }
+    .brand p{
+      margin:0; font-size: 12px; color: var(--muted);
+    }
+
+    .nav{
+      display:flex; gap: 10px; flex-wrap: wrap; justify-content:flex-end;
+      align-items:center;
+    }
+    .nav a{
+      font-size: 12px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.06);
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+      white-space: nowrap;
+    }
+    .nav a:hover{
+      transform: translateY(-1px);
+      background: rgba(255,255,255,.10);
+      border-color: rgba(255,255,255,.18);
+    }
+    .nav a.active{
+      border-color: rgba(124,92,255,.55);
+      background: rgba(124,92,255,.18);
+    }
+
+    /* Hero */
+    header.hero{ padding: 34px 0 14px; }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 18px;
+      align-items:stretch;
+    }
+    .hero-card{
+      border-radius: calc(var(--r) + 6px);
+      border: 1px solid rgba(255,255,255,.12);
+      background:
+        radial-gradient(900px 400px at 15% 10%, rgba(124,92,255,.22), transparent 55%),
+        radial-gradient(700px 350px at 85% 20%, rgba(30,230,166,.16), transparent 55%),
+        linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.05));
+      box-shadow: var(--shadow);
+      padding: 22px;
+      overflow:hidden;
+      position:relative;
+    }
+    .hero-card:before{
+      content:"";
+      position:absolute; inset:-2px;
+      background: radial-gradient(600px 180px at 40% 0%, rgba(255,255,255,.18), transparent 60%);
+      pointer-events:none;
+      opacity:.55;
+    }
+    .kicker{
+      display:inline-flex; align-items:center; gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.20);
+      font-size: 12px;
+      color: var(--muted);
+      position:relative;
+      z-index:1;
+    }
+    .dot{
+      width: 8px; height: 8px; border-radius: 99px;
+      background: var(--brand2);
+      box-shadow: 0 0 0 6px rgba(30,230,166,.10);
+    }
+    .hero h2{
+      margin: 14px 0 10px;
+      font-size: clamp(22px, 3.2vw, 40px);
+      line-height: 1.06;
+      letter-spacing: -0.6px;
+      position:relative;
+      z-index:1;
+    }
+    .hero p{
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: 14.5px;
+      line-height: 1.55;
+      max-width: 68ch;
+      position:relative;
+      z-index:1;
+    }
+    .hero-actions{
+      display:flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items:center;
+      position:relative;
+      z-index:1;
+    }
+    .btn{
+      display:inline-flex; align-items:center; gap: 10px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.08);
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+      font-size: 13px;
+      cursor:pointer;
+      user-select:none;
+    }
+    .btn:hover{ transform: translateY(-1px); background: rgba(255,255,255,.12); border-color: rgba(255,255,255,.22); }
+    .btn-primary{
+      border-color: rgba(124,92,255,.55);
+      background: linear-gradient(180deg, rgba(124,92,255,.28), rgba(124,92,255,.18));
+    }
+    .btn-primary:hover{ background: linear-gradient(180deg, rgba(124,92,255,.34), rgba(124,92,255,.22)); }
+    .pill{
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.18);
+      font-size: 12px;
+      color: var(--muted2);
+    }
+
+    .side{
+      border-radius: calc(var(--r) + 6px);
+      border: 1px solid rgba(255,255,255,.12);
+      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.04));
+      box-shadow: var(--shadow2);
+      padding: 18px;
+    }
+    .side h3{ margin: 4px 0 8px; font-size: 14px; letter-spacing:.2px; }
+    .side p{ margin:0 0 10px; color: var(--muted); font-size: 13px; line-height: 1.55; }
+    .meta{
+      display:grid; gap: 10px; margin-top: 10px;
+    }
+    .meta .row{
+      display:flex; align-items:flex-start; justify-content:space-between;
+      gap: 12px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.05);
+    }
+    .meta .label{ color: var(--muted2); font-size: 12px; }
+    .meta .value{ font-size: 12px; color: var(--text); text-align:right; }
+
+    /* Main */
+    main{ padding: 10px 0 42px; }
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
+    .section{
+      border-radius: calc(var(--r) + 6px);
+      border: 1px solid rgba(255,255,255,.12);
+      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.04));
+      box-shadow: var(--shadow2);
+      overflow:hidden;
+    }
+    .section-head{
+      padding: 16px 18px;
+      display:flex; align-items:flex-start; justify-content:space-between; gap: 12px;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      background:
+        radial-gradient(600px 180px at 15% 0%, rgba(124,92,255,.14), transparent 60%),
+        radial-gradient(520px 160px at 85% 0%, rgba(30,230,166,.10), transparent 60%);
+    }
+    .section-head h3{
+      margin:0;
+      font-size: 15px;
+      letter-spacing:.2px;
+    }
+    .section-head p{
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
+      max-width: 80ch;
+    }
+
+    .content{ padding: 14px 18px 18px; }
+
+    /* Accordion */
+    details.qa{
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
+      padding: 12px 12px;
+      margin: 10px 0;
+      overflow:hidden;
+    }
+    details.qa[open]{
+      background: rgba(255,255,255,.07);
+      border-color: rgba(255,255,255,.16);
+    }
+    summary{
+      list-style:none;
+      cursor:pointer;
+      display:flex;
+      align-items:flex-start;
+      gap: 12px;
+      outline:none;
+    }
+    summary::-webkit-details-marker{ display:none; }
+
+    .qnum{
+      width: 34px; height: 34px; border-radius: 12px;
+      background: linear-gradient(180deg, rgba(124,92,255,.34), rgba(124,92,255,.12));
+      border: 1px solid rgba(124,92,255,.45);
+      box-shadow: 0 14px 28px rgba(124,92,255,.14);
+      display:flex; align-items:center; justify-content:center;
+      font-weight: 700;
+      flex: 0 0 auto;
+      margin-top: 2px;
+    }
+    .qtitle{
+      flex: 1 1 auto;
+      min-width: 0;
+    }
+    .qtitle h4{
+      margin:0;
+      font-size: 14px;
+      line-height: 1.35;
+      letter-spacing:.1px;
+    }
+    .qtitle .tags{
+      margin-top: 6px;
+      display:flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .tag{
+      font-size: 11px;
+      color: var(--muted);
+      padding: 5px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.14);
+    }
+    .chev{
+      width: 36px; height: 36px; border-radius: 12px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.16);
+      display:flex; align-items:center; justify-content:center;
+      flex: 0 0 auto;
+      transition: transform .15s ease;
+      margin-top: 1px;
+    }
+    details[open] .chev{ transform: rotate(180deg); }
+
+    .answer{
+      padding: 12px 6px 2px 46px;
+      color: var(--muted);
+      line-height: 1.62;
+      font-size: 13.6px;
+    }
+    .answer strong{ color: var(--text); }
+    .answer .bullets{
+      margin: 10px 0 0 0;
+      padding-left: 18px;
+    }
+    .answer .bullets li{ margin: 6px 0; }
+
+    /* Citations / refs */
+    .refs{
+      display:grid;
+      gap: 10px;
+    }
+    .ref{
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.05);
+      padding: 12px 12px;
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap: 12px;
+    }
+    .ref .left{
+      min-width: 0;
+    }
+    .ref h5{
+      margin:0;
+      font-size: 13px;
+    }
+    .ref p{
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: 12.5px;
+      line-height: 1.45;
+    }
+    .ref a{
+      color: var(--text);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-color: rgba(124,92,255,.55);
+    }
+
+    /* Footer */
+    footer{
+      padding: 18px 0 26px;
+      color: var(--muted2);
+      font-size: 12px;
+      border-top: 1px solid rgba(255,255,255,.08);
+      background: rgba(0,0,0,.12);
+    }
+    .foot{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    /* Back to top */
+    .top{
+      position: fixed;
+      right: 16px;
+      bottom: 16px;
+      z-index: 60;
+      opacity: 0;
+      transform: translateY(10px);
+      pointer-events: none;
+      transition: opacity .18s ease, transform .18s ease;
+    }
+    .top.show{
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px){
+      .hero-grid{ grid-template-columns: 1fr; }
+      .brand{ min-width: 0; }
+      .answer{ padding-left: 6px; }
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      html{ scroll-behavior:auto; }
+      .nav a, .btn, .chev, .top{ transition:none !important; }
+    }
+  </style>
+</head>
+
+<body>
+  <a id="inicio"></a>
+
+  <div class="topbar" role="navigation" aria-label="Navegación principal">
+    <div class="wrap topbar-inner">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <h1>Teoría del Estado y Gobierno</h1>
+          <p>Constitución Política de Colombia (1991) — 6 preguntas</p>
+        </div>
+      </div>
+
+      <nav class="nav" aria-label="Secciones">
+        <a href="#resumen" class="active">Resumen</a>
+        <a href="#preguntas">Preguntas</a>
+        <a href="#referencias">Referencias</a>
+      </nav>
+    </div>
+  </div>
+
+  <header class="hero">
+    <div class="wrap hero-grid">
+      <section class="hero-card" aria-label="Encabezado">
+        <div class="kicker">
+          <span class="dot" aria-hidden="true"></span>
+          <span>Pregrado: Administración Pública</span>
+          <span class="pill" title="Fecha del documento">2026-03-27</span>
+        </div>
+
+        <h2>La Constitución de 1991: dignidad humana, Estado social y ciudadanía activa</h2>
+        
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#preguntas" aria-label="Ir a las preguntas">
+            Ver las 6 preguntas
+            <span aria-hidden="true">→</span>
+          </a>
+          <button class="btn" id="btnExpand" type="button" aria-label="Expandir o contraer todas las respuestas">
+            Expandir todo
+          </button>
+          <span class="pill">Carga rápida: sin librerías</span>
+        </div>
+      </section>
+
+      <aside class="side" aria-label="Ficha académica">
+        <h3>Ficha</h3>
+        <p>
+          Tema: constitucionalismo moderno y el modelo social de la Constitución de 1991.
+          Enfoque: dignidad humana, efectividad de derechos, participación y justicia social.
+        </p>
+        <div class="meta">
+          <div class="row">
+            <div class="label">Materia</div>
+            <div class="value">Teoría del Estado y Gobierno</div>
+          </div>
+          <div class="row">
+            <div class="label">Producto</div>
+            <div class="value">Página web (respuestas)</div>
+          </div>
+          <div class="row">
+            <div class="label">Estructura</div>
+            <div class="value">Resumen + 6 preguntas + referencias</div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </header>
+
+  <main class="wrap grid">
+    <section class="section" id="resumen" aria-label="Resumen ejecutivo">
+      <div class="section-head">
+        <div>
+          <h3>Resumen ejecutivo (en una mirada)</h3>
+          <p>
+            La Constitución Política de 1991 se alinea con el constitucionalismo moderno al colocar a la
+            <strong>dignidad humana</strong> y a la <strong>efectividad de los derechos</strong> en el centro, dentro del marco del
+            <strong>Estado social de derecho</strong>.
+          </p>
+        </div>
+      </div>
+
+      <div class="content">
+        <details class="qa" open>
+          <summary>
+            <div class="qnum" aria-hidden="true">★</div>
+            <div class="qtitle">
+              <h4>Idea fuerza</h4>
+              <div class="tags">
+                <span class="tag">Dignidad humana</span>
+                <span class="tag">Derechos efectivos</span>
+                <span class="tag">Acción pública</span>
+              </div>
+            </div>
+            <div class="chev" aria-hidden="true">⌄</div>
+          </summary>
+
+          <div class="answer">
+            <p>
+              El giro principal de 1991 es doble: (1) <strong>persona y ciudadanía como fundamento</strong> del orden constitucional,
+              y (2) <strong>dimensión social</strong> que exige que los derechos no se queden en lo formal, sino que orienten
+              políticas públicas, igualdad real y un “orden justo”.
+            </p>
+            <ul class="bullets">
+              <li><strong>Centro:</strong> dignidad como criterio de legitimidad, interpretación y límite al poder.</li>
+              <li><strong>Modelo:</strong> Estado social de derecho con fines estatales explícitos.</li>
+              <li><strong>Herramientas:</strong> mecanismos para exigir derechos (tutela, petición, cumplimiento).</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <section class="section" id="preguntas" aria-label="Preguntas y respuestas">
+      <div class="section-head">
+        <div>
+          <h3>Preguntas (6) — Respuestas completas</h3>
+          <p>
+            Abre cada pregunta para leer. Puedes usar “Expandir todo” para mostrar todas las respuestas en una sola vista.
+          </p>
+        </div>
+      </div>
+
+      <div class="content" id="qaRoot">
+        <details class="qa">
+          <summary>
+            <div class="qnum">1</div>
+            <div class="qtitle">
+              <h4>¿Cuál es la característica distintiva de la Constitución Política de 1991 en relación con el constitucionalismo moderno?</h4>
+              <div class="tags">
+                <span class="tag">Dignidad humana</span>
+                <span class="tag">Fórmula social</span>
+                <span class="tag">Constitucionalismo moderno</span>
+              </div>
+            </div>
+            <div class="chev" aria-hidden="true">⌄</div>
+          </summary>
+
+          <div class="answer">
+            <p>
+              La Constitución de 1991 asume una característica distintiva del constitucionalismo moderno al colocar en el centro
+              del orden constitucional a los ciudadanos y a los seres humanos, entendiendo que la <strong>dignidad</strong>
+              es una “premisa antropológica cultural” desde la cual se interpreta y justifica el sentido de la Constitución
+              (Häberle, 2001, citado en Vargas Laverde, 2010).
+            </p>
+            <p>
+              De manera complementaria, incorpora la fórmula <strong>“social”</strong> como evolución conceptual: lo social
+              trasciende la visión limitada de derechos subjetivos y se vuelve componente esencial del modelo que la Constitución
+              busca consolidar (Ruiz-Rico, 2003, citado en Vargas Laverde, 2010).
+            </p>
+            <ul class="bullets">
+              <li><strong>a)</strong> Fundamenta la Constitución en la dignidad humana como premisa cultural y antropológica.</li>
+              <li><strong>b)</strong> Adopta un enfoque social que convierte los derechos y su efectividad en elemento estructural del modelo de Estado y de las decisiones públicas (Vargas Laverde, 2010).</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="qa">
+          <summary>
+            <div class="qnum">2</div>
+            <div class="qtitle">
+              <h4>¿Cuál es el objetivo principal que la Constitución de 1991 intenta consolidar en términos de su modelo social?</h4>
+              <div class="tags">
+                <span class="tag">Estado social de derecho</span>
+                <span class="tag">Igualdad real</span>
+                <span class="tag">Orden justo</span>
+              </div>
+            </div>
+            <div class="chev" aria-hidden="true">⌄</div>
+          </summary>
+
+          <div class="answer">
+            <p>
+              El objetivo principal es consolidar un modelo social donde el Estado asuma responsabilidades activas para que la
+              ciudadanía pueda vivir con dignidad y ejercer derechos de forma efectiva. Esto orienta la acción pública hacia
+              la <strong>igualdad real</strong>, la protección de grupos en situación de vulnerabilidad y el bienestar general.
+            </p>
+            <ul class="bullets">
+              <li><strong>a)</strong> Adopción del <strong>Estado social de derecho</strong> (CPC, 1991, art. 1).</li>
+              <li><strong>b)</strong> Finalidades estatales: servicio a la comunidad, prosperidad general, efectividad de derechos y construcción de un <strong>“orden justo”</strong> (CPC, 1991, art. 2).</li>
+            </ul>
+            <p>
+              En la lectura base, esto se conecta con la política social como paradigma de acción concertada de Estado y otros
+              actores para lograr fines sociales.
+            </p>
+          </div>
+        </details>
+
+        <details class="qa">
+          <summary>
+            <div class="qnum">3</div>
+            <div class="qtitle">
+              <h4>¿Cuál es la importancia de considerar la dignidad humana en el constitucionalismo moderno?</h4>
+              <div class="tags">
+                <span class="tag">Fundamento</span>
+                <span class="tag">Interpretación</span>
+                <span class="tag">Límite al poder</span>
+              </div>
+            </div>
+            <div class="chev" aria-hidden="true">⌄</div>
+          </summary>
+
+          <div class="answer">
+            <p>
+              Considerar la dignidad humana es clave porque fija el punto de partida antropológico y cultural de la Constitución:
+              el orden jurídico y político se legitima en la medida en que reconoce a cada persona como un fin en sí misma,
+              no como medio para objetivos del Estado, del mercado o de mayorías circunstanciales (Häberle, 2001, citado en Vargas Laverde, 2010).
+            </p>
+            <p><strong>Tres funciones principales de la dignidad:</strong></p>
+            <ul class="bullets">
+              <li><strong>Fundamento</strong> de los derechos: garantías que no dependen de la voluntad del gobernante.</li>
+              <li><strong>Criterio</strong> de interpretación y ponderación: protege integridad, autonomía e igualdad material.</li>
+              <li><strong>Límite</strong> al poder: prohíbe prácticas que degraden o instrumentalicen a la persona.</li>
+            </ul>
+            <p>
+              En 1991, dignidad y fórmula social se articulan: no basta declarar libertades formales; se busca que los derechos
+              sean efectivos dentro de un modelo que promueve bienestar general y justicia social (Ruiz-Rico, 2003, citado en Vargas Laverde, 2010).
+            </p>
+          </div>
+        </details>
+
+        <details class="qa">
+          <summary>
+            <div class="qnum">4</div>
+            <div class="qtitle">
+              <h4>¿Cómo se diferencia la Constitución de 1991 de las constituciones anteriores en términos de su enfoque hacia los ciudadanos y seres humanos?</h4>
+              <div class="tags">
+                <span class="tag">Ciudadanía activa</span>
+                <span class="tag">Tutela</span>
+                <span class="tag">Soberanía popular</span>
+              </div>
+            </div>
+            <div class="chev" aria-hidden="true">⌄</div>
+          </summary>
+
+          <div class="answer">
+            <p>
+              La Constitución de 1991 cambia el enfoque: de una ciudadanía vista principalmente como administrada o representada,
+              hacia una ciudadanía como <strong>sujeto de derechos</strong> y <strong>actor</strong> con herramientas para exigirlos y participar.
+            </p>
+            <ul class="bullets">
+              <li>
+                Fortalece instrumentos directos de protección de derechos fundamentales como la <strong>acción de tutela</strong>
+                (CPC, 1991, art. 86), además del <strong>derecho de petición</strong> (art. 23) y otras acciones como la
+                <strong>acción de cumplimiento</strong> (art. 87).
+              </li>
+              <li>
+                La soberanía reside en el pueblo y puede ejercerse de manera directa o indirecta (CPC, 1991, art. 3),
+                reorientando la legitimidad hacia debate, participación y control ciudadano.
+              </li>
+            </ul>
+            <p>
+              Así, el ser humano aparece no solo como quien acata normas, sino como centro de lo pactado en la carta magna,
+              en coherencia con el Estado social de derecho.
+            </p>
+          </div>
+        </details>
+
+        <details class="qa">
+          <summary>
+            <div class="qnum">5</div>
+            <div class="qtitle">
+              <h4>¿De qué manera la dimensión cultural y antropológica influye en la redacción y aplicación de la Constitución de 1991?</h4>
+              <div class="tags">
+                <span class="tag">Pluralismo</span>
+                <span class="tag">Contexto</span>
+                <span class="tag">Política pública</span>
+              </div>
+            </div>
+            <div class="chev" aria-hidden="true">⌄</div>
+          </summary>
+
+          <div class="answer">
+            <p>
+              Influye porque reconoce que la sociedad colombiana es plural (múltiples identidades y formas de vida), por lo que
+              el orden constitucional no puede ser una homogeneización forzada.
+            </p>
+            <ul class="bullets">
+              <li>
+                <strong>En la redacción:</strong> incorpora el <strong>pluralismo</strong> como valor estructural (CPC, 1991, art. 1)
+                y reconoce realidades sociales complejas que requieren garantías diferenciadas.
+              </li>
+              <li>
+                <strong>En la aplicación:</strong> obliga a una interpretación sensible a contextos; no basta lectura formalista.
+                La efectividad de derechos y políticas sociales exige comprender barreras socioculturales reales.
+              </li>
+            </ul>
+            <p>
+              En el texto base, pensar políticas sociales dentro del marco constitucional implica reconocer que su éxito requiere
+              acción decidida y concertada, entendiendo condiciones institucionales y socioculturales.
+            </p>
+          </div>
+        </details>
+
+        <details class="qa">
+          <summary>
+            <div class="qnum">6</div>
+            <div class="qtitle">
+              <h4>¿Qué implicaciones tiene la combinación de derechos individuales y la promoción del bienestar general y la justicia social en el modelo social propuesto por la Constitución de 1991?</h4>
+              <div class="tags">
+                <span class="tag">Solidaridad</span>
+                <span class="tag">Deberes</span>
+                <span class="tag">Gestión por impacto</span>
+              </div>
+            </div>
+            <div class="chev" aria-hidden="true">⌄</div>
+          </summary>
+
+          <div class="answer">
+            <p>
+              La Constitución de 1991 no opone individuo y sociedad: propone una arquitectura donde los derechos individuales
+              coexisten con deberes y finalidades colectivas.
+            </p>
+            <ul class="bullets">
+              <li>
+                Se expresa en el principio de <strong>solidaridad</strong> (CPC, 1991, art. 1) y los <strong>deberes ciudadanos</strong>
+                (art. 95), que complementan el ejercicio de derechos.
+              </li>
+              <li>
+                Promover bienestar general y justicia social implica diseñar e implementar políticas públicas con enfoque de derechos,
+                priorizando efectividad y reducción de desigualdades (CPC, 1991, art. 2).
+              </li>
+              <li>
+                Cuando el modelo exige resultados (no solo declaraciones), se vuelve clave coordinar capacidades estatales y concertar
+                acciones con otros sectores para alcanzar fines sociales.
+              </li>
+            </ul>
+            <p>
+              En suma, los derechos se protegen con fuerza, pero integrados a un proyecto de justicia social, bienestar general y responsabilidad compartida.
+            </p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <section class="section" id="referencias" aria-label="Referencias">
+      <div class="section-head">
+        <div>
+          <h3>Referencias</h3>
+          <p>Incluye las fuentes mencionadas en tu texto. (Puedes ajustar el formato a APA 7 según te lo pidan).</p>
+        </div>
+      </div>
+
+      <div class="content refs">
+        <div class="ref">
+          <div class="left">
+            <h5>Constitución Política de Colombia (1991)</h5>
+            <p>Gaceta Constitucional No. 116 (20 de julio de 1991).</p>
+          </div>
+          <div class="pill">Fuente normativa</div>
+        </div>
+
+        <div class="ref">
+          <div class="left">
+            <h5>Vargas Laverde, J. (2010)</h5>
+            <p>
+              “Las políticas sociales en el marco de la Constitución Política de 1991”. Revista Opera, (10), 117–129.
+              Enlace: <a href="https://agora.edu.es/servlet/articulo?codigo=3905075" target="_blank" rel="noopener noreferrer">agora.edu.es</a>
+            </p>
+          </div>
+          <div class="pill">Artículo</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap foot">
+      <div>
+        <strong>Entrega:</strong> Teoría del Estado y Gobierno — Administración Pública
+      </div>
+      <div>
+        <span id="footNote">Hecho para lectura rápida, navegación clara y presentación limpia.</span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="top" id="backTop">
+    <a class="btn btn-primary" href="#inicio" aria-label="Volver arriba">↑ Volver arriba</a>
+  </div>
+
+  <script>
+    // UX: resaltar sección activa en el menú + botón volver arriba
+    const links = Array.from(document.querySelectorAll('.nav a'));
+    const sections = links
+      .map(a => document.querySelector(a.getAttribute('href')))
+      .filter(Boolean);
+
+    const backTop = document.getElementById('backTop');
+    const btnExpand = document.getElementById('btnExpand');
+    const qaRoot = document.getElementById('qaRoot');
+
+    function setActive(hash){
+      links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === hash));
+    }
+
+    const obs = new IntersectionObserver((entries) => {
+      const visible = entries
+        .filter(e => e.isIntersecting)
+        .sort((a,b) => b.intersectionRatio - a.intersectionRatio)[0];
+      if(!visible) return;
+      const id = '#' + visible.target.id;
+      setActive(id);
+      history.replaceState(null, '', id);
+    }, { root: null, threshold: [0.35, 0.55, 0.75] });
+
+    sections.forEach(s => obs.observe(s));
+
+    // Expand / collapse all
+    let expanded = false;
+    btnExpand.addEventListener('click', () => {
+      const items = qaRoot.querySelectorAll('details.qa');
+      expanded = !expanded;
+      items.forEach(d => d.open = expanded);
+      btnExpand.textContent = expanded ? 'Contraer todo' : 'Expandir todo';
+    });
+
+    // Back to top visibility
+    const onScroll = () => {
+      const y = window.scrollY || document.documentElement.scrollTop;
+      backTop.classList.toggle('show', y > 650);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  </script>
+</body>
+</html>
